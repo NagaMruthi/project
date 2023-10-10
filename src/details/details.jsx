@@ -53,7 +53,7 @@ function Details(){
       console.log(user);
       console.log(token)
       var temps=Object.values(beds).flat(1);
-      var temps=temps.map((b)=>{
+    temps=temps.map((b)=>{
         if(b.bedid===selectbed){
             return{...b,patients:[...b.patients,{useremail:user.email,token:user.accessToken}]}
         }
