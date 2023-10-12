@@ -4,7 +4,12 @@ import { useParams } from "react-router-dom";
 import _ from "lodash"; 
 import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 const provider = new GoogleAuthProvider();
+
 function Details(){
+    var [admindashboard,setAdmindashboard]=React.useState([
+        "nagamaruthi567@gmail.com",
+        "vigneshvarikolu111@gmail.com"
+    ])
     var p=useParams();
     console.log(p); 
     var {isLoading,data}=useGetHospitalidQuery(p.id);
@@ -51,11 +56,11 @@ function Details(){
       const token = credential.accessToken;
       const user = result.user;
       console.log(user);
-      console.log(token)
+      console.log(token);
       var temps=Object.values(beds).flat(1);
     temps=temps.map((b)=>{
         if(b.bedid===selectbed){
-            return{...b,patients:[...b.patients,{useremail:user.email,token:user.accessToken}]}
+            return{...b,patients:[...b.patients,{useremail:user.email,status:"ongoing"}]}
         }
         else{
             return b
