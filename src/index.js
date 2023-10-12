@@ -9,6 +9,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Login from './featuress/Login';
+import Comment from './featuress/comment';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -21,10 +22,19 @@ const router = createBrowserRouter([
       {
       path: "/vamsi/:id",
       element: <Nav></Nav>,
-    },]
+     children:[{
+      path: "/vamsi/:id/maruthi/:s",
+      element: <Comment></Comment>
+     }]
+    },
+    // {
+    //   path: "/maruthi/:s",
+    //   element: <Comment></Comment>,
+    // }
+  
+    ]
   },
 ]);
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <RouterProvider router={router} />

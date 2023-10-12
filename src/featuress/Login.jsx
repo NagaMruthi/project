@@ -1,7 +1,8 @@
 import React from 'react';
+import Form from '../form';
 import { signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 import  { useGetadduserMutation, useGetallusersQuery } from '../services/users';
-import { useNavigate } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
 import { auth } from '../firebase';
 const provider = new GoogleAuthProvider();
 function Login() {
@@ -52,11 +53,13 @@ function Login() {
                 <tr>
                     <td>Password</td>
                     <td>
-                        <input type="password" />
+                      <input type="password" />
                     </td>
                 </tr>
                 <tr>
-                    <td colSpan={2}><button onClick={abc}>Login</button></td>
+                    <td colSpan={2}><button onClick={abc}>Login</button>
+                    </td>
+                    <Outlet></Outlet>
                 </tr>
             </tbody>
         </table>

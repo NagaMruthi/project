@@ -1,4 +1,5 @@
 @import url("../node_modules/bootstrap/dist/css/bootstrap.min.css");
+@import url("../node_modules/bootstrap-icons/font/bootstrap-icons.css");
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -11,4 +12,19 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+.my{
+  height: 100px;
+  width: 100px;
+}
+.kl{
+  height: 300px;
+  width: 200px;
+  align-items: self-start; 
+}
+.uh{
+  text-align: center;
+}
+.text{
+  align-items: center;
 }
